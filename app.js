@@ -1,3 +1,34 @@
+var express = require('express');
+
+var app = express();
+
+app.get('/', function (req, res) {
+    res.send('hello, express!');
+});
+
+app.get('/about', function (req, res) {
+    //res.send('About Page');
+    res.sendfile('./about.html');
+});
+
+app.get('/about', function (req, res) {
+    //res.send('About Page');
+    res.sendfile('./contact.html');
+});
+
+app.get('/login', function (req, res) {
+    res.send('About Page');
+    //res.sendfile('./log.html');
+});
+
+
+app.listen(5500, function () {
+    console.log('ready on port 5500');
+});
+
+
+
+
 // const fs=require('fs');
 
 //const files = fs.readdirSync('./');
@@ -38,26 +69,3 @@ server.on('connection',(socket)=>{
 server.listen(3000);
 
 console.log("Listening on port 3000...");*/
-
-
-
-var express = require('express');
-
-var app = express();
-
-app.get('/', function (req, res) {
-    res.send('hello, express!');
-});
-
-app.get('/about', function (req, res) {
-    //res.send('About Page');
-    res.sendfile('./about.html');
-});
-
-app.get('contact', function (req, res) {
-    res.send('Contact Page');
-});
-
-app.listen(5500, function () {
-    console.log('ready on port 5500');
-});
